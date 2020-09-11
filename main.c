@@ -75,6 +75,7 @@ int main(int argc, char * const * argv){
         {
             printf("Error al crear el proceso hijo \n");
             printf("Se crearon %d procesos hijos\n", veces);
+            free(procesos);
             break;
         }
         else if (aux->pidHijo == 0)
