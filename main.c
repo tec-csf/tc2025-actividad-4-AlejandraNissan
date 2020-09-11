@@ -82,6 +82,7 @@ int main(int argc, char * const * argv){
             // Estamos en el hijo
             promedio = (getpid()+getppid())/2;
             printf("Soy el proceso hijo con PID: %d con padre %d y mi promedio es %d\n", getpid(), getppid(), promedio);
+            free(procesos);
             exit(promedio); //No se evnian correctamente los valors por este método
         }
         else {
