@@ -37,7 +37,7 @@ int main(int argc, char * const * argv){
                 break;
             case 'h':
                 printf("Debes ingresar la cantidad de hijos que quieres crear en el siguiente formato ./a.out -n <numero>\n");
-                break;
+                return 1;
             case '?':
             if (optopt == 'n')
                 fprintf (stderr, "Opción -%c requiere un argumento.\n", optopt);
@@ -55,6 +55,7 @@ int main(int argc, char * const * argv){
 
     for (int index = optind; index < argc; index++){
         printf ("El argumento no es una opción válida %s\n", argv[index]);
+        return 1;
     }
 
     //Aqui se va a almacenar la información de los procesos hijos
